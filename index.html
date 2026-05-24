@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoVerse - Web3 NFT Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="stars" class="stars-background"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">◆</span>
+                CryptoVerse
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#studio" class="nav-link">Studio</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#connect" class="nav-link">Connect Wallet</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="glitch" data-text="CRYPTOVERSE">CRYPTOVERSE</span>
+            </h1>
+            <p class="hero-subtitle">Transform Physics into Art. Create Infinite NFTs.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="createBtn">Create Now</button>
+                <button class="btn btn-secondary" id="exploreBtn">Explore</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div id="particles" class="particles"></div>
+        </div>
+    </section>
+
+    <!-- Video Screen Area -->
+    <section id="screen" class="video-section">
+        <div class="video-container">
+            <div class="video-frame">
+                <video id="videoScreen" width="100%" height="100%" autoplay muted loop>
+                    <source src="output/generated-video.mp4" type="video/mp4">
+                </video>
+                <div id="videoOverlay" class="video-overlay"></div>
+            </div>
+            <div class="video-info">
+                <h3>Live Simulation Feed</h3>
+                <p>Real-time 3D physics animations rendered for NFT generation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Canvas Section -->
+    <section id="studio" class="studio">
+        <div class="studio-container">
+            <div class="studio-header">
+                <h2>NFT Creation Studio</h2>
+                <p>3D Physics Simulation Engine</p>
+            </div>
+            
+            <div class="studio-grid">
+                <!-- 3D Canvas -->
+                <div class="canvas-wrapper">
+                    <canvas id="canvas3d" class="canvas-3d"></canvas>
+                    <div class="canvas-overlay">
+                        <span class="simulation-status">RENDERING...</span>
+                    </div>
+                </div>
+
+                <!-- Controls Panel -->
+                <div class="control-panel">
+                    <div class="control-section">
+                        <h4>Physics Parameters</h4>
+                        
+                        <div class="control-group">
+                            <label>Gravity</label>
+                            <input type="range" id="gravitySlider" min="0" max="100" value="50">
+                            <span id="gravityValue">50</span>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Particle Count</label>
+                            <input type="range" id="particleSlider" min="10" max="500" value="100">
+                            <span id="particleValue">100</span>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Velocity</label>
+                            <input type="range" id="velocitySlider" min="0" max="50" value="20">
+                            <span id="velocityValue">20</span>
+                        </div>
+
+                        <div class="control-group">
+                            <label>Rotation Speed</label>
+                            <input type="range" id="rotationSlider" min="0" max="10" value="3" step="0.1">
+                            <span id="rotationValue">3</span>
+                        </div>
+                    </div>
+
+                    <div class="control-section">
+                        <h4>Color Palette</h4>
+                        <div class="color-picker">
+                            <div class="color-swatch" style="background: #00ff88;" data-color="#00ff88"></div>
+                            <div class="color-swatch" style="background: #ff006e;" data-color="#ff006e"></div>
+                            <div class="color-swatch" style="background: #00d9ff;" data-color="#00d9ff"></div>
+                            <div class="color-swatch" style="background: #ffbe0b;" data-color="#ffbe0b"></div>
+                            <div class="color-swatch" style="background: #8338ec;" data-color="#8338ec"></div>
+                        </div>
+                    </div>
+
+                    <div class="control-section">
+                        <h4>Export Options</h4>
+                        <button class="btn btn-small" id="recordBtn">Record Animation</button>
+                        <button class="btn btn-small" id="captureBtn">Capture Frame</button>
+                        <button class="btn btn-accent" id="mintBtn">Mint NFT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="gallery-container">
+            <h2>Generated NFTs</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- NFT cards will be generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Crypto Connections -->
+    <section id="connect" class="crypto-connect">
+        <div class="connect-container">
+            <h2>Connect Your Wallet</h2>
+            <p>Mint and trade your generated NFTs on blockchain</p>
+            <div class="wallet-options">
+                <button class="wallet-btn" id="metamask">
+                    <span class="wallet-icon">🦊</span>
+                    MetaMask
+                </button>
+                <button class="wallet-btn" id="walletconnect">
+                    <span class="wallet-icon">🔗</span>
+                    WalletConnect
+                </button>
+                <button class="wallet-btn" id="coinbase">
+                    <span class="wallet-icon">🪙</span>
+                    Coinbase Wallet
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 CryptoVerse. Built with Web3 magic ✨</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cannon@0.20.0/build/cannon.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/physics-engine.js"></script>
+    <script src="js/3d-renderer.js"></script>
+    <script src="js/video-recorder.js"></script>
+    <script src="js/nft-minter.js"></script>
+    <script src="js/wallet-connect.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
